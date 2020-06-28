@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './widgets/user_transactions.dart';
 
 void main() {
   runApp(MyApp());
@@ -21,19 +22,22 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Flutter App'),
       ),
-      body: Column(
-        children: <Widget>[
-          Card(
-            child: Text(
-              'My Chart!',
+      body: SingleChildScrollView(
+        child: Column(
+          //mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            Container(
+              width: double.infinity,
+              child: Card(
+                color: Colors.blue,
+                child: Text('My Chart!'),
+                elevation: 5,
+              ),
             ),
-          ),
-           Card(
-            child: Text(
-              'Transactions!',
-            ),
-          ),
-        ],
+            UserTransactions(),
+          ],
+        ),
       ),
     );
   }
